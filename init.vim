@@ -49,3 +49,6 @@ nnoremap <leader>r :Rg<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " Quit NERDTree if last buffer is exited.
 let NERDTreeShowHidden=1 " Show hidden files and folders.
 nmap <leader>ne :NERDTreeToggle<CR>
+
+" YML.
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
