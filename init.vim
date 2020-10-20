@@ -44,6 +44,7 @@ source ~/.config/nvim/coc.vim
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :Rg<CR>
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
 " NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " Quit NERDTree if last buffer is exited.
