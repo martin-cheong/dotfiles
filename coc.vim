@@ -1,3 +1,5 @@
+let g:coc_global_extensions = ['coc-diagnostic', 'coc-json', 'coc-python', 'coc-tsserver']
+
 set nobackup
 set nowritebackup
 set shortmess+=c
