@@ -4,6 +4,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
@@ -42,6 +43,9 @@ source ~/.config/nvim/coc.vim
 " Dockerfile
 autocmd BufReadPost Dockerfile* set ft=Dockerfile
 
+" JSON.
+:command! PPJSON :% !jq --indent 4 '.'
+
 " fzf.
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
@@ -54,4 +58,5 @@ let NERDTreeShowHidden=1 " Show hidden files and folders.
 nmap <leader>ne :NERDTreeToggle<CR>
 
 " YML.
+autocmd BufReadPost *.{yaml,yml} set ft=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
